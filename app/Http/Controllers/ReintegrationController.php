@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\faculte;
 use App\Models\departement;
+use App\Models\Diplom;
 use App\Models\filiere;
 use App\Models\specialite;
 use App\Models\User;
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Mail\email;
+use App\Models\Bachelier;
 use App\Models\domain;
 use Illuminate\Support\Facades\Mail;
 
@@ -35,7 +37,7 @@ class ReintegrationController extends Controller
 public function allReintegration(){
 
 
-   $reintegrat = reintegration::all();
+   $reintegrat = reintegration::paginate(10);
  //   $reintegrationAdmin=reintegration::paginate(5);
   return view('reintegrat', compact('reintegrat'));
 }
@@ -114,8 +116,7 @@ public function allReintegration(){
            
 
             return redirect()->route('print1')->with('success','Votre reintegration a été ajouter avec success');
-            $pdf = PDF::loadView('liste');
-            $pdf->download('liste.pdf');
+          
            }
 
 
@@ -123,7 +124,9 @@ return redirect()->back()->with('error','Votre demmande est refusée');
 }
 
 public function userId(){
+  
     $reintegration=reintegration::where('id_user',Auth()->user()->id)->first();
+    
     return view('liste',compact('reintegration'));
 
 }
@@ -134,6 +137,19 @@ public function userId(){
 
     public function bac(){
       return view('bac');
+    }
+    public function listes(){
+      return view('listes');
+    }
+    public function liste_bac(){
+
+      $bac =Bachelier::paginate(10);
+      return view('liste_bac',compact('bac'));
+    }
+    public function liste_diplom(){
+
+      $diplom =Diplom::paginate(10);
+      return view('liste_diplom',compact('diplom'));
     }
 
     /**
@@ -229,5 +245,28 @@ public function userId(){
        // }
 
    // }
+
+   public function destroy_bac($id)
+   {
+       $bac=Bachelier::find($id);
+       $bac->delete();
+       return redirect()->back()->with('success','Votre supprission a été effectuer');
+
+  }
+  public function destroy_diplom($id)
+  {
+      $diplom=Diplom::find($id);
+      $diplom->delete();
+      return redirect()->back()->with('success','Votre supprission a été effectuer');
+
+ }
+
+ public function destroy_reintegration($id)
+ {
+     $reintegration=reintegration::find($id);
+     $reintegration->delete();
+     return redirect()->back()->with('success','Votre supprission a été effectuer');
+
+}
 
 }

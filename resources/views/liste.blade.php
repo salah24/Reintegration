@@ -1,18 +1,21 @@
 
 
+
     <div class="container" id="printableArea">
         <div class="row">
             <style>
 p{
     display: inline;
-    float:right;
-    clear: right;
+  
 }
 
             </style>
        
         <img  width="100%" height="200px" src="{{asset('images/entete.png')}}">
 
+        
+
+         
                 <div class="card" style="margin-left: 40px;margin-right:40px" >
                     <div class="card-body">
     
@@ -149,6 +152,7 @@ p{
    
        
     
+
         <!-- The Modal -->
       
     

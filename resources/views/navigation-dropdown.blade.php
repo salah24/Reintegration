@@ -5,9 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
-                    </a>
+                   <img width="60px" src="{{asset('images/logo.png')}}">
                 </div>
 
 
@@ -18,15 +16,16 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('demmandes') }}" :active="request()->routeIs('demmandes')">
-                        {{ __('demmandes') }}
+                    <x-jet-nav-link href="{{ route('listes') }}" :active="request()->routeIs('listes')">
+                        {{ __('Listes') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('allReintegration') }}" :active="request()->routeIs('allReintegration')">
+                    <x-jet-nav-link href="{{ route('demmandes') }}" :active="request()->routeIs('demmandes')">
                         {{ __('Reintegration') }}
                     </x-jet-nav-link>
                 </div>
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('bac') }}" :active="request()->routeIs('bac')">
                         {{ __('Bac') }}

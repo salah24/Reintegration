@@ -193,6 +193,31 @@
                         class="text-danger">*</i></label>
                           <input type="text" name="cycle" class="form-control"required placeholder="Année">
                     </div>
+                    <div class="form-group col-md-12">
+                        <label for="InputBirthday">Faculte<i class="text-danger">*</i></label>
+                        <select name="fac" id="form-control" id="faculte" class="form-control">
+                          @foreach ($faculte as $item)
+                            <option value="{{$item->abbreviation_fac}}">{{$item->libelle_fac}}</option>
+
+                           @endforeach
+
+                        </select>
+
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <label for="InputBirthday">Departement<i
+                  class="text-danger">*</i></label>
+
+                  <select name="dept" id="form-control" class="form-control">
+                      @foreach ($dept as $item)
+                        <option value="{{$item->abbreviation_dept}}" >{{$item->libelle_dept}}</option>
+
+                       @endforeach
+
+                    </select>
+
+                  </div>
 
                 </div>
                 <div class="row">
@@ -214,35 +239,10 @@
                         </div>
                     </div>
 
-                        <div class="form-group col-md-12">
-                          <label for="InputBirthday">Departement<i
-                        class="text-danger">*</i></label>
-
-                        <select name="dept" id="form-control" class="form-control">
-                            @foreach ($dept as $item)
-                              <option value="{{$item->abbreviation_dept}}" >{{$item->libelle_dept}}</option>
-
-                             @endforeach
-
-                          </select>
-
-                        </div>
+                      
 
 
-                         <div class="form-group col-md-12">
-                              <label for="InputBirthday">Faculte<i class="text-danger">*</i></label>
-                              <select name="fac" id="form-control" id="faculte" class="form-control">
-                                @foreach ($faculte as $item)
-                                  <option value="{{$item->abbreviation_fac}}">{{$item->libelle_fac}}</option>
-
-                                 @endforeach
-
-                              </select>
-
-
-
-
-                        </div>
+                         
 
 
 

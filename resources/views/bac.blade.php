@@ -4,7 +4,11 @@
 
     </x-slot>
 
-
+<style>
+    label{
+        font-family: 'Amiri', serif;
+    }
+</style>
 <div class="continer">
     <div class="row">
             <form class=" col-offset-2 col-md-8 ml-5 mt-5" style="margin-left: 300px !important"  action="{{route('bac.store')}}" method="post">
@@ -39,7 +43,7 @@
                     <label for="specialite" class="pull-right">التخصص المرغوب<i class="text-danger">*</i></label>
                     <input type="text" class="form-control" name="specialite"  required>
                     </div>
-                    <button class="btn btn-primary pull-right">إرسال</button>
+                    <button class="btn btn-primary pull-right" style="font-family: 'Amiri', serif;">إرسال</button>
             
             </form>
 </div>

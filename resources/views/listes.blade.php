@@ -45,32 +45,42 @@ color:#f5dbdb;
  </style>
 
        <div class="card text-white bg-success  mb-3 col-md-4 mr-5 ml-5 opacité ml-2" style="max-width: 18rem;">
-         <div class="card-header center card_fs"><a class="lien font" href="{{route('demmandes')}}">طلب إعادة إدماج<br><br> </a></div>
+         <div class="card-header center card_fs"><a class="lien font" href="{{route('allReintegration')}}">Liste des integrants </a></div>
         
          <div class="card-body">
-          <i class=" fa fa-share" style="font-size: 60px;margin-left: 80px"></i> 
-
+             <p class="lead center" style="font-size: 40px">
+       @php
+           $reintegration = DB::table('reintegration')->count();
+           echo $reintegration;
+       @endphp
+</p>
          </div>
        </div>
        <div class="card text-white bg-danger mb-3 col-md-4 mr-5 opacité" style="max-width: 18rem;">
-         <div class="card-header center card_fs "><a class="lien font" href="{{route('diplome')}}">طلب تسجيل للتحضير لشهادة ليسانس ثانية</a></div>
+         <div class="card-header center card_fs "><a class="lien font" href="{{route('liste_diplom')}}">Liste de 2eme Diplome</a></div>
 
          <div class="card-body">
-          <i class="fa fa-graduation-cap" style="font-size: 60px;margin-left: 70px"></i>
-           <h5 class="card-title cart_count_fs center">@php
-
-           @endphp</h5>
+         
+            <p class="lead center" style="font-size: 40px">
+                @php
+                    $reintegration = DB::table('Bacheliers')->count();
+                    echo $reintegration;
+                @endphp
+         </p>
 
          </div>
        </div>
        <div class="card bg-primary  mb-3 col-md-4 mr opacité" style="max-width: 18rem;">
-         <div class="card-header center card_fs "><a class="lien font" href="{{route('bac')}}">طلب تسجيل ببكالوريا جديدة قبل 2020 </a></div>
+         <div class="card-header center card_fs "><a class="lien font" href="{{route('liste_bac')}}">Liste de Bacheliers </a></div>
         
          <div class="card-body">
-          <i class="fa fa-university" style="font-size: 60px;margin-left: 70px;color:#fff"></i>
-           <h5 class="card-title cart_count_fs center">@php
-
-         @endphp</h5>
+         
+            <p class="lead center" style="font-size: 40px;color:#fff">
+                @php
+                    $reintegration = DB::table('diploms')->count();
+                    echo $reintegration;
+                @endphp
+         </p>
 
          </div>
        </div>

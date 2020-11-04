@@ -36,6 +36,22 @@ Route::get('/print','App\Http\Controllers\ReintegrationController@userId')->name
 Route::get('/bac','App\Http\Controllers\ReintegrationController@bac')->name('bac');
 Route::post('/store','App\Http\Controllers\BacController@store')->name('bac.store');
 Route::post('/diplome','App\Http\Controllers\DiplomeController@store')->name('diplome.store');
+Route::get('listes','App\Http\Controllers\ReintegrationController@listes')->name('listes');
+Route::get('liste_bac','App\Http\Controllers\ReintegrationController@liste_bac')->name('liste_bac');
+Route::get('liste_diplom','App\Http\Controllers\ReintegrationController@liste_diplom')->name('liste_diplom');
+
+Route::get('delete_bac/{id}','App\Http\Controllers\ReintegrationController@destroy_bac' )->name('destroy_bac');
+Route::get('delete_diplom/{id}','App\Http\Controllers\ReintegrationController@destroy_diplom' )->name('destroy_diplom');
+Route::get('delete_reintegration/{id}','App\Http\Controllers\ReintegrationController@destroy_reintegration' )->name('destroy_reintegration');
+
+
+
+Route::get('pdf', 'App\Http\Controllers\PDFController@generatepdf')->name('pdf');
+
+
+
+
+
 
 
 
